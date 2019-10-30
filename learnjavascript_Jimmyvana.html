@@ -1,19 +1,39 @@
 <!DOCTYPE html>
 
+<!-- I'm just assigning a section of the page here where the text output will 
+	appear. You'll notice I reference the 'help' id again in the script. -->
 <p id='help'></p>
 
 <script>
+	// Defining the variables all at once
 	let fruits, text, fLen, i;
+	// Then assigning values to each of them
 	fruits = ['Banana', 'Orange', 'Apple', 'Mango'];
+	// This says - count the # of values in the fruits array (4)
 	fLen = fruits.length;
 	
+	// Now let's assign an initial value of '<ul>' to text, this is the HTML
+	// element for an unordered list
 	text = '<ul>';
+	// Now, let's initialize the loop (set a starting value) with 0 (i=0)
+	// Next, we need an exit condition, meaning: stop the loop when x happens,
+	// in this case, the loop will continue UNTIL it is no longer less than the
+	// total length of the fruits array
+	// Finally, specify the increment value i++ means to increment by 1 for each loop
 	for (i = 0; i < fLen; i++) {
+		// Now - you probably have learned that to choose a value in an array,
+		// you use its index value (the index value just defines where it is in
+		// an array).  The first value in an index is [0], so to choose 'Banana'
+		// you could say fruits[0].  Since our loop starts at 0 - this is what
+		// it's doing on the first run through.  Then - it increments by 1 and 
+		// looks at fruits[1] (Orange)
 		text += '<li>' + fruits[i] + '</li>';
+		// text += is just a way of saying to append each new value to the text variable
 	}
 
 	text += '<ul>';
 
+	// This is what pushes the text value to the HTML element (so it appears on the page)
 	document.getElementById('help').innerHTML = text;
 </script>
 
